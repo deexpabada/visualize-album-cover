@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  var width = 500,
-    height = 500,
+  var width = 450,
+    height = 450,
     start = 0,
     end = 2.25,
     numSpirals = 3;
@@ -18,7 +18,7 @@ $(document).ready(function() {
 
   chooseCategory("genre");
   renderVis();
-  
+
   //choose from genre, year, season, tempo, popularity
   function chooseCategory(category) {
     if (category == "genre") {
@@ -70,7 +70,6 @@ $(document).ready(function() {
     $("#chart").empty();
     chooseCategory("tempo");
     renderVis();
-    console.log("hi");
   })
   $("#popularity").click(function() {
     $("#chart").empty();

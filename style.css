@@ -6,11 +6,17 @@ body {
 #genre, #year, #season, #popularity, #tempo {
   display: block;
   margin: 10px 0 10px ; /*top rightleft bottom*/
-}
-.row {
-  padding: 10px;
+  background-color: rgb(30, 131, 221);
+  border: none;
 }
 
+#chart {
+  padding: 40px 0 0 40px;
+}
+
+.row {
+  padding: 30px;
+}
 
 .zoomIn, .toggleButtons {
   height: 600px;
