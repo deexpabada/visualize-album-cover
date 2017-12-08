@@ -26,28 +26,38 @@ $(document).ready(function() {
       valuesList = genreVisData;
       colorList = genreColorList;
       rawData = genreData;
+      $(".catButton").css('background-color',  'rgb(72,135,191)');
+      $("#genre").css('background-color','rgba(43, 161, 97, 50)');
     } else if (category == "year") {
       categories = yearCategories;
       valuesList = yearVisData;
       colorList = yearColorList;
       rawData = yearData;
+      $(".catButton").css('background-color',  'rgb(72,135,191)');
+      $("#year").css('background-color','rgba(43, 161, 97, 50)');
     } else if (category == "season") {
       categories = seasonCategories;
       valuesList = seasonVisData;
       colorList = seasonColorList;
       rawData = seasonData;
       numSpirals = 2;
+      $(".catButton").css('background-color',  'rgb(72,135,191)');
+      $("#season").css('background-color','rgba(43, 161, 97, 50)');
     } else if (category == "tempo") {
       categories = tempoCategories;
       valuesList = tempoVisData;
       colorList = tempoColorList;
       rawData = tempoData;
+      $(".catButton").css('background-color',  'rgb(72,135,191)');
+      $("#tempo").css('background-color','rgba(43, 161, 97, 50)');
     } else if (category == "popularity") {
       categories = popularityCategories;
       valuesList = popularityVisData;
       colorList = popularityColorList;
       rawData = popularityData;
       numSpirals = 1.6;
+      $(".catButton").css('background-color',  'rgb(72,135,191)');
+      $("#popularity").css('background-color','rgba(43, 161, 97, 50)');
     }
   };
 
@@ -391,7 +401,7 @@ $(document).ready(function() {
       });$("#whiteKey").hover(
         function() {
         svg.selectAll("rect").style("fill", function(d) {
-          if(d.color == "antiqueWhite") {      
+          if(d.color == "antiqueWhite") {
             return d.color;
           } else {
             return "rgba(218, 218, 218, 0.87)";
