@@ -1,6 +1,6 @@
 $(document).ready(function() {
-  var width = 450,
-    height = 450,
+  var width = 400,
+    height = 400,
     start = 0,
     end = 2.25,
     numSpirals = 3;
@@ -275,6 +275,8 @@ $(document).ready(function() {
         svg.selectAll("rect").style("fill", function(d) {
           if(d.color == "Red") {
             return d.color;
+          } else if (d.color == "white") {
+            return "white";
           } else {
             return "rgba(167, 167, 167, 0.87)";
           }
@@ -290,6 +292,8 @@ $(document).ready(function() {
         svg.selectAll("rect").style("fill", function(d) {
           if(d.color == "Orange") {
             return d.color;
+          } else if (d.color == "white") {
+            return "white";
           } else {
             return "rgba(218, 218, 218, 0.87)";
           }
@@ -305,7 +309,10 @@ $(document).ready(function() {
         svg.selectAll("rect").style("fill", function(d) {
           if(d.color == "Yellow") {
             return d.color;
+          } else if (d.color == "white") {
+            return "white";
           } else {
+
             return "rgba(218, 218, 218, 0.87)";
           }
         });
@@ -319,7 +326,10 @@ $(document).ready(function() {
         svg.selectAll("rect").style("fill", function(d) {
           if(d.color == "Green") {
             return d.color;
+          } else if (d.color == "white") {
+            return "white";
           } else {
+
             return "rgba(218, 218, 218, 0.87)";
           }
         });
@@ -333,7 +343,10 @@ $(document).ready(function() {
         svg.selectAll("rect").style("fill", function(d) {
           if(d.color == "Blue") {
             return d.color;
+          } else if (d.color == "white") {
+            return "white";
           } else {
+
             return "rgba(218, 218, 218, 0.87)";
           }
         });
@@ -347,7 +360,10 @@ $(document).ready(function() {
         svg.selectAll("rect").style("fill", function(d) {
           if(d.color == "Purple") {
             return d.color;
+          } else if (d.color == "white") {
+            return "white";
           } else {
+
             return "rgba(218, 218, 218, 0.87)";
           }
         });
@@ -361,7 +377,10 @@ $(document).ready(function() {
         svg.selectAll("rect").style("fill", function(d) {
           if(d.color == "Pink") {
             return d.color;
+          } else if (d.color == "white") {
+            return "white";
           } else {
+
             return "rgba(218, 218, 218, 0.87)";
           }
         });
@@ -375,7 +394,10 @@ $(document).ready(function() {
         svg.selectAll("rect").style("fill", function(d) {
           if(d.color == "Brown") {
             return d.color;
+          } else if (d.color == "white") {
+            return "white";
           } else {
+
             return "rgba(218, 218, 218, 0.87)";
           }
         });
@@ -389,7 +411,10 @@ $(document).ready(function() {
         svg.selectAll("rect").style("fill", function(d) {
           if(d.color == "Black") {
             return d.color;
+          } else if (d.color == "white") {
+            return "white";
           } else {
+
             return "rgba(218, 218, 218, 0.87)";
           }
         });
@@ -403,7 +428,10 @@ $(document).ready(function() {
         svg.selectAll("rect").style("fill", function(d) {
           if(d.color == "antiqueWhite") {
             return d.color;
+          } else if (d.color == "white") {
+            return "white";
           } else {
+
             return "rgba(218, 218, 218, 0.87)";
           }
         });
@@ -417,6 +445,8 @@ $(document).ready(function() {
         svg.selectAll("rect").style("fill", function(d) {
           if(d.color == "burlywood") {      //beige = burlywood for vis purposes
             return d.color;
+          } else if (d.color == "white") {
+            return "white";
           } else {
             return "rgba(218, 218, 218, 0.87)";
           }
@@ -431,6 +461,8 @@ $(document).ready(function() {
         svg.selectAll("rect").style("fill", function(d) {
           if(d.color == "Gray") {
             return d.color;
+          } else if (d.color == "white") {
+            return "white";
           } else {
             return "rgba(218, 218, 218, 0.87)";
           }

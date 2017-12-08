@@ -13,6 +13,15 @@ img {
   margin: 0;
 }
 
+#titleText {
+  position: absolute;
+  top: 20px;
+  right: 180px;
+  font-size: 38px;
+  color: black;
+  font-family:
+}
+
 #genre, #year, #season, #popularity, #tempo {
   display: block;
   margin: 10px 0 10px;
@@ -84,6 +93,10 @@ img {
   width: 100%;
 }
 
+
+.zoomIn {
+  padding-top: 150px;
+}
 
 .toggleButtons {
   /*border: 2px solid black;*/
