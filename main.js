@@ -5,10 +5,10 @@ $(document).ready(function() {
     end = 2.25,
     numSpirals = 3;
   margin = {
-    top: 30,
-    bottom: 30,
-    left: 30,
-    right: 30
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0
   };
 
   var categories; //categories for this vis
@@ -96,7 +96,7 @@ $(document).ready(function() {
     //make svg chart
     var svg = d3.select("#chart").append("svg")
       .attr("width", width + margin.right + margin.left)
-      .attr("height", height + margin.left + margin.right)
+      .attr("height", height)
       .append("g")
       .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
@@ -231,6 +231,8 @@ $(document).ready(function() {
         tooltip.select('.artists').html("Artists: <b>" + RockRedArtists + "</b>");
         tooltip.select('.covers').html("Covers: ");
         var albumCovers = "";
+
+        //add album covers for each category/color combo
         for (i=0; i < RockRedCovers.length; i++) {
         albumCovers += "<img src=" + RockRedCovers[i]+">";
       }
@@ -246,8 +248,6 @@ $(document).ready(function() {
 
       })
       .on('mousemove', function(d) {
-        // tooltip.style('top', '50px')
-        //   .style('left', '500px');
       })
       .on('mouseout', function(d) {
         d3.selectAll("rect")
@@ -259,6 +259,180 @@ $(document).ready(function() {
         tooltip.style('display', 'none');
         tooltip.style('opacity', 0);
       });
+
+      $("#redKey").hover(
+        function() {
+        svg.selectAll("rect").style("fill", function(d) {
+          if(d.color == "Red") {
+            return d.color;
+          } else {
+            return "rgba(167, 167, 167, 0.87)";
+          }
+        });
+      },
+      function() {
+        svg.selectAll("rect").style("fill", function(d) {
+            return d.color;
+          });
+      });
+      $("#orangeKey").hover(
+        function() {
+        svg.selectAll("rect").style("fill", function(d) {
+          if(d.color == "Orange") {
+            return d.color;
+          } else {
+            return "rgba(218, 218, 218, 0.87)";
+          }
+        });
+      },
+      function() {
+        svg.selectAll("rect").style("fill", function(d) {
+            return d.color;
+          });
+      });
+      $("#yellowKey").hover(
+        function() {
+        svg.selectAll("rect").style("fill", function(d) {
+          if(d.color == "Yellow") {
+            return d.color;
+          } else {
+            return "rgba(218, 218, 218, 0.87)";
+          }
+        });
+      },
+      function() {
+        svg.selectAll("rect").style("fill", function(d) {
+            return d.color;
+          });
+      });$("#greenKey").hover(
+        function() {
+        svg.selectAll("rect").style("fill", function(d) {
+          if(d.color == "Green") {
+            return d.color;
+          } else {
+            return "rgba(218, 218, 218, 0.87)";
+          }
+        });
+      },
+      function() {
+        svg.selectAll("rect").style("fill", function(d) {
+            return d.color;
+          });
+      });$("#blueKey").hover(
+        function() {
+        svg.selectAll("rect").style("fill", function(d) {
+          if(d.color == "Blue") {
+            return d.color;
+          } else {
+            return "rgba(218, 218, 218, 0.87)";
+          }
+        });
+      },
+      function() {
+        svg.selectAll("rect").style("fill", function(d) {
+            return d.color;
+          });
+      });$("#purpleKey").hover(
+        function() {
+        svg.selectAll("rect").style("fill", function(d) {
+          if(d.color == "Purple") {
+            return d.color;
+          } else {
+            return "rgba(218, 218, 218, 0.87)";
+          }
+        });
+      },
+      function() {
+        svg.selectAll("rect").style("fill", function(d) {
+            return d.color;
+          });
+      });$("#pinkKey").hover(
+        function() {
+        svg.selectAll("rect").style("fill", function(d) {
+          if(d.color == "Pink") {
+            return d.color;
+          } else {
+            return "rgba(218, 218, 218, 0.87)";
+          }
+        });
+      },
+      function() {
+        svg.selectAll("rect").style("fill", function(d) {
+            return d.color;
+          });
+      });$("#brownKey").hover(
+        function() {
+        svg.selectAll("rect").style("fill", function(d) {
+          if(d.color == "Brown") {
+            return d.color;
+          } else {
+            return "rgba(218, 218, 218, 0.87)";
+          }
+        });
+      },
+      function() {
+        svg.selectAll("rect").style("fill", function(d) {
+            return d.color;
+          });
+      });$("#blackKey").hover(
+        function() {
+        svg.selectAll("rect").style("fill", function(d) {
+          if(d.color == "Black") {
+            return d.color;
+          } else {
+            return "rgba(218, 218, 218, 0.87)";
+          }
+        });
+      },
+      function() {
+        svg.selectAll("rect").style("fill", function(d) {
+            return d.color;
+          });
+      });$("#whiteKey").hover(
+        function() {
+        svg.selectAll("rect").style("fill", function(d) {
+          if(d.color == "antiqueWhite") {      
+            return d.color;
+          } else {
+            return "rgba(218, 218, 218, 0.87)";
+          }
+        });
+      },
+      function() {
+        svg.selectAll("rect").style("fill", function(d) {
+            return d.color;
+          });
+      });$("#beigeKey").hover(
+        function() {
+        svg.selectAll("rect").style("fill", function(d) {
+          if(d.color == "burlywood") {      //beige = burlywood for vis purposes
+            return d.color;
+          } else {
+            return "rgba(218, 218, 218, 0.87)";
+          }
+        });
+      },
+      function() {
+        svg.selectAll("rect").style("fill", function(d) {
+            return d.color;
+          });
+      });$("#grayKey").hover(
+        function() {
+        svg.selectAll("rect").style("fill", function(d) {
+          if(d.color == "Gray") {
+            return d.color;
+          } else {
+            return "rgba(218, 218, 218, 0.87)";
+          }
+        });
+      },
+      function() {
+        svg.selectAll("rect").style("fill", function(d) {
+            return d.color;
+          });
+      });
+
+
 
   };
 });

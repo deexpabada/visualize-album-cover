@@ -1,4 +1,4 @@
-var colorTemplate = ["white",'Red','Orange','Yellow','Green','Blue','Purple','Pink','Brown','Black','beige','burlywood','Gray'];   //white = beige for visibility; burlywood = beige
+var colorTemplate = ["white",'Red','Orange','Yellow','Green','Blue','Purple','Pink','Brown','Black','antiqueWhite','burlywood','Gray'];   //white = beige for visibility; burlywood = beige
 
 function makeColorList(num) {
   var customColorTemplate = []

@@ -1,6 +1,5 @@
 body {
-  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
-  margin: 40px;
+  font-family: 'Helvetica';
 }
 
 img {
@@ -9,22 +8,75 @@ img {
   margin: 5px;
 }
 
+.key {
+  padding: 0;
+  margin: 0;
+}
+
 #genre, #year, #season, #popularity, #tempo {
   display: block;
-  margin: 10px 0 10px ; /*top rightleft bottom*/
+  margin: 10px 0 10px;
+  /*top rightleft bottom*/
   background-color: rgb(30, 131, 221);
   border: none;
-  margin-top:15px;
+  margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
+  background-color: #7898C2;
+  border-radius: 11px;
 }
 
-#chart {
-
+.colorKey {
+  height: 50px;
+  margin: 2px;
 }
 
-.row {
-  padding: 30px;
+#redKey {
+  background-color: red;
+}
+
+#orangeKey {
+  background-color: orange;
+}
+
+#yellowKey {
+  background-color: yellow;
+}
+
+#greenKey {
+  background-color: green;
+}
+
+#blueKey {
+  background-color: blue;
+}
+
+#purpleKey {
+  background-color: purple;
+}
+
+#pinkKey {
+  background-color: pink;
+}
+
+#brownKey {
+  background-color: brown;
+}
+
+#blackKey {
+  background-color: black;
+}
+
+#whiteKey {
+  background-color: antiqueWhite;;
+}
+
+#beigeKey {
+  background-color: burlywood;
+}
+
+#grayKey {
+  background-color: gray;
 }
 
 .zoomIn, .toggleButtons {
@@ -32,18 +84,14 @@ img {
   width: 100%;
 }
 
-.zoomIn {
-  /*background-color: blue;*/
-}
 
 .toggleButtons {
   /*border: 2px solid black;*/
-  padding-top: 100px;
+  padding-top: 80px;
   padding-left: 0;
-  padding-right:0;
+  padding-right: 0;
   text-align: center;
 }
-
 
 .axis path {
   fill: none;
@@ -53,6 +101,7 @@ img {
 
 .axis text {
   font-size: 13px;
+  font-family: "Helvetica";
   stroke: #222;
 }
 
