@@ -5,10 +5,10 @@ $(document).ready(function() {
     end = 2.25,
     numSpirals = 3;
   margin = {
-    top: 50,
-    bottom: 50,
-    left: 50,
-    right: 50
+    top: 30,
+    bottom: 30,
+    left: 30,
+    right: 30
   };
 
   var categories; //categories for this vis
@@ -36,7 +36,7 @@ $(document).ready(function() {
       valuesList = seasonVisData;
       colorList = seasonColorList;
       rawData = seasonData;
-      numSpirals = 1.8;
+      numSpirals = 2;
     } else if (category == "tempo") {
       categories = tempoCategories;
       valuesList = tempoVisData;
@@ -93,6 +93,7 @@ $(document).ready(function() {
       .domain([start, end])
       .range([40, r]);
 
+    //make svg chart
     var svg = d3.select("#chart").append("svg")
       .attr("width", width + margin.right + margin.left)
       .attr("height", height + margin.left + margin.right)
@@ -101,6 +102,7 @@ $(document).ready(function() {
 
     var points = d3.range(start, end + 0.001, (end - start) / 1000);
 
+    //create spiral
     var spiral = d3.radialLine()
       .curve(d3.curveCardinal)
       .angle(theta)
@@ -113,8 +115,9 @@ $(document).ready(function() {
       .style("fill", "none")
       .style("stroke", "steelblue");
 
+//------------------------------------------------
 
-
+  //put data in sprial
     var spiralLength = path.node().getTotalLength(),
       N = categories.length,
       barWidth = (spiralLength / N) - 1;
@@ -123,7 +126,8 @@ $(document).ready(function() {
       someData.push({
         cat: categories[i],
         value: valuesList[i],
-        color: colorList[i]
+        color: colorList[i],
+        raw: rawData[i]
       });
     }
 
@@ -139,6 +143,7 @@ $(document).ready(function() {
       })])
       .range([0, (r / numSpirals) - 20]);
 
+      //draw data in spiral
     svg.selectAll("rect")
       .data(someData)
       .enter()
@@ -184,7 +189,7 @@ $(document).ready(function() {
       .append("text")
       .attr("dy", 10)
       .style("text-anchor", "start")
-      .style("font", "10px arial")
+      .style("font", "12px arial")
       .append("textPath")
       // only add for the first of each month
       .filter(function(d, i) {
@@ -201,7 +206,10 @@ $(document).ready(function() {
       })
 
 
-    var tooltip = d3.select("#chart")
+//-----------------------------------------------------------
+
+//hover interactions
+    var tooltip = d3.select(".zoomIn")
       .append('div')
       .attr('class', 'tooltip');
 
@@ -209,25 +217,37 @@ $(document).ready(function() {
       .attr('class', 'date');
     tooltip.append('div')
       .attr('class', 'value');
+    tooltip.append('div')
+      .attr('class', 'artists');
+    tooltip.append('div')
+      .attr('class', 'covers');
+
 
     svg.selectAll("rect")
       .on('mouseover', function(d) {
 
-        tooltip.select('.date').html("Category: <b>" + d.cat + "</b>");
-        tooltip.select('.value').html("Value: <b>" + Math.round(d.value * 100) / 100 + "<b>");
+        tooltip.select('.date').html("Genre and Color: <b>" + d.cat + "</b>");
+        tooltip.select('.value').html("Number of Albums: <b>" + d.raw + "</b>");
+        tooltip.select('.artists').html("Artists: <b>" + RockRedArtists + "</b>");
+        tooltip.select('.covers').html("Covers: ");
+        var albumCovers = "";
+        for (i=0; i < RockRedCovers.length; i++) {
+        albumCovers += "<img src=" + RockRedCovers[i]+">";
+      }
+      tooltip.select('.covers').html(albumCovers);
 
         d3.select(this)
-          .style("fill", "#FFFFFF")
+          .style("fill", d.color)
           .style("stroke", "#000000")
-          .style("stroke-width", "2px");
+          .style("stroke-width", "3px");
 
         tooltip.style('display', 'block');
         tooltip.style('opacity', 2);
 
       })
       .on('mousemove', function(d) {
-        tooltip.style('top', '50px')
-          .style('left', '500px');
+        // tooltip.style('top', '50px')
+        //   .style('left', '500px');
       })
       .on('mouseout', function(d) {
         d3.selectAll("rect")

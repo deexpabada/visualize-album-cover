@@ -3,15 +3,24 @@ body {
   margin: 40px;
 }
 
+img {
+  height: 150px;
+  width: 150px;
+  margin: 5px;
+}
+
 #genre, #year, #season, #popularity, #tempo {
   display: block;
   margin: 10px 0 10px ; /*top rightleft bottom*/
   background-color: rgb(30, 131, 221);
   border: none;
+  margin-top:15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #chart {
-  padding: 40px 0 0 40px;
+
 }
 
 .row {
@@ -19,17 +28,20 @@ body {
 }
 
 .zoomIn, .toggleButtons {
-  height: 600px;
+  height: 400px;
   width: 100%;
 }
 
 .zoomIn {
-  background-color: blue;
+  /*background-color: blue;*/
 }
 
 .toggleButtons {
   /*border: 2px solid black;*/
   padding-top: 100px;
+  padding-left: 0;
+  padding-right:0;
+  text-align: center;
 }
 
 
@@ -61,16 +73,15 @@ path.spiral {
 }
 
 .tooltip {
-  background: #eee;
-  box-shadow: 0 0 5px #999999;
-  color: #333;
-  font-size: 12px;
-  left: 130px;
+  font-size: 40px;
+  font-family: "Helvetica";
   padding: 10px;
-  position: absolute;
   text-align: center;
-  top: 95px;
   z-index: 10;
   display: block;
   opacity: 0;
+}
+
+.date, .value, .artists {
+  font-size: 14px;
 }

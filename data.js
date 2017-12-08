@@ -25,7 +25,7 @@ function makeVisData(inputList) {
   for (i = 0; i < inputList.length; i++) {
     if (inputList[i] == -1) {
       visData.push(15);
-    } else if (inputList[i] > 40) {
+    } else if (inputList[i] > 18) {
       visData.push(10);
     } else if(inputList[i] == 0) {
       visData.push(1);

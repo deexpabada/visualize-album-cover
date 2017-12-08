@@ -13,21 +13,22 @@
 
 <body>
 
-  <div class="row">
-    <div id="chart" class="col-md-5"></div>
-    <div class="col-md-3 toggleButtons" id="toggleButtons">
+  <div class="vis row">
+    <div class="col-md-1"> </div>
+    <div class="col-md-1 toggleButtons" id="toggleButtons">
       <button type="button" class="btn btn-primary" id="genre">Genre</button>
       <button type="button" class="btn btn-primary" id="year">Year</button>
       <button type="button" class="btn btn-primary" id="season">Season</button>
       <button type="button" class="btn btn-primary" id="popularity">Popularity</button>
       <button type="button" class="btn btn-primary" id="tempo">Tempo</button>
     </div>
-    <div class="col-md-4 zoomIn"></div>
+    <div id="chart" class="col-md-5"></div>
+    <div class="zoomIn col-md-5"></div>
   </div>
 
+  <script type="text/javascript" src="interactData.js"></script>
   <script type="text/javascript" src="data.js"></script>
   <script type="text/javascript" src="main.js"></script>
-
 </body>
 
 </html>
