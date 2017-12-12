@@ -33,18 +33,18 @@ var RockGrayCovers = ["https://i.scdn.co/image/594340fd535de088674b20df30f1cc8d4
 
 
 //Hiphop
-var HipHopRedArtists = [];
+var HipHopRedArtists = ["Eve","2 Chainz","Kanye West"];
 var HipHopOrangeArtists = [];
 var HipHopYellowArtists = [];
-var HipHopGreenArtists = [];
-var HipHopBlueArtists = [];
-var HipHopPurpleArtists = [];
-var HipHopPinkArtists = [];
-var HipHopBrownArtists = [];
-var HipHopBlackArtists = [];
-var HipHopWhiteArtists = [];
-var HipHopBeigeArtists = [];
-var HipHopGrayArtists = [];
+var HipHopGreenArtists = ["Juelz Santana","Playboi Carti","Young M.A"];
+var HipHopBlueArtists = ["Logic","Lil Pump","Dreezy","Missy Elliott"];
+var HipHopPurpleArtists = ["Run�D.M.C.","Nicki Minaj"];
+var HipHopPinkArtists = ["Nicki Minaj"];
+var HipHopBrownArtists = ["21 Savage","The Diplomats","Lil' Kim","Skeme","The Lady Of Rage","Beastie Boys","J.J. Fad","Yo Gotti","Future"];
+var HipHopBlackArtists = ["Rapsody","Lil Uzi Vert","PnB Rock","Roxanne Shante","Kamaiyah","Lil Wayne","Lady Leshurr","Migos","G Herbo","Cam�ron","Maxo Kream","YG","Lil Uzi Vert","Future","Juelz Santana"];
+var HipHopWhiteArtists = ["Nicki Minaj"];
+var HipHopBeigeArtists = ["Crime Mob","Queen Latifah","A$AP Ferg"];
+var HipHopGrayArtists = ["Juelz Santana","Remy Ma","Cam�ron","50 Cent","Jeezy","Drake","MC Lyte","B.o.B","Big Pun","Snoop Dogg","Da Brat","Foxy Brown","Skooly","DeJ Loaf","Beastie Boys","Monie Love","Eminem","Jim Jones","Cardi B","Bankroll Fresh","Salt-N-Pepa"];
 
 var HipHopRedCovers = [];
 var HipHopOrangeCovers = [];
@@ -60,18 +60,18 @@ var HipHopBeigeCovers = [];
 var HipHopGrayCovers = [];
 
 //Folk
-var FolkRedArtists = [];
-var FolkOrangeArtists = [];
-var FolkYellowArtists = [];
-var FolkGreenArtists = [];
-var FolkBlueArtists = [];
-var FolkPurpleArtists = [];
-var FolkPinkArtists = [];
-var FolkBrownArtists = [];
-var FolkBlackArtists = [];
-var FolkWhiteArtists = [];
-var FolkBeigeArtists = [];
-var FolkGrayArtists = [];
+var FolkRedCovers = ["Steve Tyssen","Roadkill Ghost Choir","Johnny Flynn","Seth Avett & Jessica Lea Mayfield","Good Advice","Sunparlour Players"];
+var FolkOrangeCovers = ["Holley Maher","Joe Purdy","Wild Rivers","Iron & Wine"];
+var FolkYellowCovers = ["Little Green Cars","Laura Gibson","Califone","All Our Exes Live in Texas","Tutlie","Austin Basham","Haley Heynderickx","Karen Dalton"];
+var FolkGreenCovers = ["James Taylor","The Sea The Sea","Fossil Collective","Hozier"];
+var FolkBlueCovers = ["The Staves","Richard Thompson","John Paul White","Sufjan Stevens"];
+var FolkPurpleCovers = ["Whitney Rose"];
+var FolkPinkCovers = ["Devendra Banhart","The Harmaleighs","Dori Freeman"];
+var FolkBrownCovers = ["Phil Ochs","Nick Mulvey","Vance Joy"];
+var FolkBlackCovers = ["Joni Mitchell"];
+var FolkWhiteCovers = ["Beta Radio","The Head and the Heart"];
+var FolkBeigeCovers = ["Tim Buckley"];
+var FolkGrayCovers = ["Judy Collins","Shovels & Rope","Dave Van Ronk","Half Moon Run","First Aid Kit","Vashti Bunyan","Joseph","Edward Sharpe & The Magnetic Zeros","Graham Colton","The Wind and The Wave","Richie Havens","Joan Baez","Houndmouth","Bob Dylan","Bob Dylan","Fairport Convention","The Lumineers","Bob Dylan","Lord Huron","Birdtalker","Milo Greene"];
 
 var FolkRedCovers = [];
 var FolkOrangeCovers = [];
@@ -87,18 +87,18 @@ var FolkBeigeCovers = [];
 var FolkGrayCovers = [];
 
 //Country
-var CountryRedArtists = [];
+var CountryRedArtists = ["Rick Trevino","Hal Ketchum"];
 var CountryOrangeArtists = [];
 var CountryYellowArtists = [];
-var CountryGreenArtists = [];
-var CountryBlueArtists = [];
+var CountryGreenArtists = ["Diamond Rio","Randy Houser","Dierks Bentley","Cole Swindell","Daryle Singletary","Chely Wright"];
+var CountryBlueArtists = ["Eric Church","David Nail"];
 var CountryPurpleArtists = [];
 var CountryPinkArtists = [];
-var CountryBrownArtists = [];
-var CountryBlackArtists = [];
+var CountryBrownArtists = ["Thomas Rhett","Dolly Parton","Vince Gill","Luke Bryan","Little Texas","Mel Tillis","Jo Dee Messina","Mark Chesnutt","Kip Moore"];
+var CountryBlackArtists = ["Brooks & Dunn","Luke Bryan","Shania Twain"];
 var CountryWhiteArtists = [];
 var CountryBeigeArtists = [];
-var CountryGrayArtists = [];
+var CountryGrayArtists = ["Grayson Capps","Dustin Lynch","Aaron Tippin","Dustin Lynch","Rodney Atkins","Dolly Parton","Randy Travis","Old Dominion","Joe Nichols","Townes Van Zandt","Brett Eldredge","Luke Bryan","Chris Young","Luke Bryan","Travis Tritt","John Michael Montgomery","Toby Keith","Eric Church","George Strait","Jason Aldean","Billy Ray Cyrus"];
 
 var CountryRedCovers = [];
 var CountryOrangeCovers = [];
@@ -114,18 +114,18 @@ var CountryBeigeCovers = [];
 var CountryGrayCovers = [];
 
 //Classical
-var ClassicalRedArtists = [];
-var ClassicalOrangeArtists = [];
-var ClassicalYellowArtists = [];
-var ClassicalGreenArtists = [];
+var ClassicalRedArtists = ["Johann Sebastian Bach","Erik Satie"];
+var ClassicalOrangeArtists = ["Bed_ich Smetana","Gustav Holst"];
+var ClassicalYellowArtists = ["Jean Sibelius","Michael Finnissy"];
+var ClassicalGreenArtists = ["Johann Pachelbel"];
 var ClassicalBlueArtists = [];
-var ClassicalPurpleArtists = [];
-var ClassicalPinkArtists = [];
-var ClassicalBrownArtists = [];
-var ClassicalBlackArtists = [];
-var ClassicalWhiteArtists = [];
-var ClassicalBeigeArtists = [];
-var ClassicalGrayArtists = [];
+var ClassicalPurpleArtists = ["Ursula Oppens","Franz Schubert"];
+var ClassicalPinkArtists = ["Jean Sibelius"];
+var ClassicalBrownArtists = ["George Gershwin","Camille Saint-Sa�ns","Alexander Borodin","Modest Mussorgsky","Astor Piazzolla"];
+var ClassicalBlackArtists = ["Gustav Mahler","Johann Sebastian Bach","Fran�ois Couperin","Ludwig van Beethoven","Isaac Alb�niz"];
+var ClassicalWhiteArtists = ["Franz Liszt","Ralph Vaughan Williams","Arvo P�rt","B�la Bart�k","Franz Joseph Haydn","John Adams","Arvo P�rt"];
+var ClassicalBeigeArtists = ["Aaron Copland","Gioachino Rossini"];
+var ClassicalGrayArtists = ["Anton Bruckner","Gabriel Faur�","Sergei Rachmaninoff","Christoph Willibald Gluck","Johann Sebastian Bach","Maurice Ravel","Richard Wagner","Gustav Mahler","Pyotr Ilyich Tchaikovsky","Igor Stravinsky","Arnold Schoenberg","Nikolai Rimsky-Korsakov","Johann Strauss II","Felix Mendelssohn","Philip Glass","Sergei Prokofiev","George Frideric Handel","Joaqu�n Rodrigo","Anton�n Dvo_�k","Charles Ives","Maurice Ravel"];
 
 var ClassicalRedCovers = [];
 var ClassicalOrangeCovers = [];
@@ -141,18 +141,18 @@ var ClassicalBeigeCovers = [];
 var ClassicalGrayCovers = [];
 
 //Electronic
-var ElectronicRedArtists = [];
-var ElectronicOrangeArtists = [];
-var ElectronicYellowArtists = [];
-var ElectronicGreenArtists = [];
-var ElectronicBlueArtists = [];
-var ElectronicPurpleArtists = [];
-var ElectronicPinkArtists = [];
-var ElectronicBrownArtists = [];
-var ElectronicBlackArtists = [];
-var ElectronicWhiteArtists = [];
-var ElectronicBeigeArtists = [];
-var ElectronicGrayArtists = [];
+var ElectronicRedArtists = ["David Guetta"];
+var ElectronicOrangeArtists = ["Illenium","FTampa","Garmiani","Axwell /\ Ingrosso","Sam Feldt","Galantis","Various Artists"];
+var ElectronicYellowArtists = ["Marshmello","Benny Benassi"];
+var ElectronicGreenArtists = ["Major Lazer","Matisse & Sadko","R3HAB"];
+var ElectronicBlueArtists = ["Lulleax","Ed Sheeran","Fedde Le Grand","Axwell","IZECOLD","Martin Garrix","San Holo","Parker","Yellow Claw"];
+var ElectronicPurpleArtists = ["Mark Knight","Jarryd James"];
+var ElectronicPinkArtists = ["Major Lazer","Romy","Miley Cyrus"];
+var ElectronicBrownArtists = ["Illenium","Major Lazer","Morgan Page","Ferry Corsten","Family and Friends"];
+var ElectronicBlackArtists = ["Major Lazer","The Shapeshifters","Calvin Harris","Tom Hangs","Late Night Alumni","Avicii","Sunfreakz","deadmau5","Kaskade","Hardwell","W&W","Gareth Emery","Tash SulBeigea","The Chainsmokers"];
+var ElectronicWhiteArtists = ["Kaskade"];
+var ElectronicBeigeArtists = [,"Toni Braxton","The Chainsmokers"];
+var ElectronicGrayArtists = ["DJ Snake","Bibio","Kaskade","Martin Garrix","Icona Pop","Madison Mars","Eric Prydz","Zonderling","Eric Prydz","Joachim Garraud","Axwell","Krewella","Ti�sto","John De Sohn","Kaskade","Guru Josh Project","Martin Garrix","Hardwell","Steve Angello","Armin van Buuren","Sander van Doorn"];
 
 var ElectronicRedCovers = [];
 var ElectronicOrangeCovers = [];
@@ -168,18 +168,18 @@ var ElectronicBeigeCovers = [];
 var ElectronicGrayCovers = [];
 
 //Jazz
-var JazzRedArtists = [];
-var JazzOrangeArtists = [];
-var JazzYellowArtists = [];
-var JazzGreenArtists = [];
-var JazzBlueArtists = [];
-var JazzPurpleArtists = [];
-var JazzPinkArtists = [];
-var JazzBrownArtists = [];
-var JazzBlackArtists = [];
-var JazzWhiteArtists = [];
+var JazzRedArtists = ["Pabzzz","Tommy Flanagan, Ron Carter & Tony Williams","Tied & Tickled Trio","The Cinematic Orchestra","Dan Cray Trio","Brous One"];
+var JazzOrangeArtists = ["Joey Pecoraro","Living Room","Groove Collective","joeshort","Xploding Plastix","Joe Corfield","Simon Jefferis"];
+var JazzYellowArtists = ["BROCKBEATS","Otesla","Esbj�rn Svensson Trio","GurtyBeats","Otesla","Axian","Skalpel"];
+var JazzGreenArtists = ["DJ Cam","Jimmy Dorsey & His Orchestra","Ra Ra Raj","Nils Petter Molv�r"];
+var JazzBlueArtists = ["halberd","Frank Sinatra"];
+var JazzPurpleArtists = ["Hawks","Shigeto","Various Artists","Electric Wire","The Greg Foat Group","Beegie Adair","Alex Tronic","Mujo"];
+var JazzPinkArtists = ["Juan Rios","fantompower","Dewaldo","Yelena Eckemoff","Scott Hamilton","Cbakl","emune"];
+var JazzBrownArtists = ["Lawrence Welk","Count Basie","Benny Goodman","Woody Herman & His Orchestra"];
+var JazzBlackArtists = ["Nina Simone","Tony Bennett","Welshly Arms"];
+var JazzWhiteArtists = ["Stan Getz","moow","Bill Evans","St Germain","Etta James"];
 var JazzBeigeArtists = [];
-var JazzGrayArtists = [];
+var JazzGrayArtists = ["Dinah Washington","Art Pepper","Alice Babs","Harry Connick, Jr.","Dean Martin","Ann Hampton Callaway","John Tesh","Lionel Hampton","Count Basie","Artie Shaw","Buddy Rich","Glenn Miller"];
 
 var JazzRedCovers = [];
 var JazzOrangeCovers = [];
@@ -195,18 +195,18 @@ var JazzBeigeCovers = [];
 var JazzGrayCovers = [];
 
 //Kpop
-var KpopRedArtists = [];
+var KpopRedArtists = ["TAEMIN","Monsta X"];
 var KpopOrangeArtists = [];
 var KpopYellowArtists = [];
 var KpopGreenArtists = [];
-var KpopBlueArtists = [];
-var KpopPurpleArtists = [];
-var KpopPinkArtists = [];
+var KpopBlueArtists = ["KARD","EXO"];
+var KpopPurpleArtists = ["BLACKPINK","TWICE"];
+var KpopPinkArtists = ["BLACKPINK","Wanna One","TWICE"];
 var KpopBrownArtists = [];
-var KpopBlackArtists = [];
-var KpopWhiteArtists = [];
+var KpopBlackArtists = ["Monsta X","KARD","EXO"];
+var KpopWhiteArtists = ["Chanyeol","EXO","IU","WINNER","EXO"];
 var KpopBeigeArtists = [];
-var KpopGrayArtists = [];
+var KpopGrayArtists = ["Henry","NCT 127","KARD","Epik High","SUNMI","PENTAGON","SEVENTEEN","SEVENTEEN","GOT7","KARD","Hyuna","Eddy Kim","EXID","Red Velvet","Super Junior","Imagine Dragons","Red Velvet","Wanna One"];
 
 
 var KpopRedCovers = [];
@@ -223,18 +223,18 @@ var KpopBeigeCovers = [];
 var KpopGrayCovers = [];
 
 //Pop
-var PopRedArtists = [];
+var PopRedArtists = ["Halsey","Cascada",];
 var PopOrangeArtists = [];
 var PopYellowArtists = [];
-var PopGreenArtists = [];
-var PopBlueArtists = [];
+var PopGreenArtists = ["Becky G","OneRepublic","Shawn Mendes","Post Malone"];
+var PopBlueArtists = ["DJ Khaled","Ed Sheeran","gnash","Ed Sheeran","Dionne Warwick","Beyonc�","Justin Bieber","Clean Bandit","Fifth Harmony","Camila Cabello","Jennifer Lopez","Selena Gomez & The Scene","Troye Sivan"];
 var PopPurpleArtists = [];
-var PopPinkArtists = [];
-var PopBrownArtists = [];
-var PopBlackArtists = [];
-var PopWhiteArtists = [];
-var PopBeigeArtists = [];
-var PopGrayArtists = [];
+var PopPinkArtists = ["Drake"];
+var PopBrownArtists = ["Miley Cyrus","DJ Khaled","Jason Derulo","Ella Vos","Rihanna","Michael Bubl�","Post Malone","Post Malone","The Weeknd"];
+var PopBlackArtists = ["Aquilo","Bobby Darin","Lorde","K.Flay","Pitbull","Chef'Special","Foster The People","Hailee Steinfeld","Coldplay","Taio Cruz","Flo Rida","Macklemore & Ryan Lewis","Lauv"];
+var PopWhiteArtists = ["Glenn Miller","Sam Smith","OMI","Julia Michaels","Coldplay","Katy Perry"];
+var PopBeigeArtists = ["WALK THE MOON","Billie Eilish"];
+var PopGrayArtists = ["Mr Eazi","Whitney Houston","Niall Horan","Beyonc�","Jason Derulo","Jon Bellion","Sia","Gym Class Heroes","Enrique Iglesias","The Chainsmokers","AJR","Shaggy","Phoenix","Janet Jackson","Destiny's Child","DREAMERS","The Chainsmokers","Red 5","The 1975","Hailee Steinfeld","EMF"];
 
 var PopRedCovers = [];
 var PopOrangeCovers = [];
@@ -250,18 +250,18 @@ var PopBeigeCovers = [];
 var PopGrayCovers = [];
 
 //RnB
-var RnBRedArtists = [];
+var RnBRedArtists = ["Jacob Banks","Usher","Kehlani","SG Lewis"];
 var RnBOrangeArtists = [];
 var RnBYellowArtists = [];
-var RnBGreenArtists = [];
-var RnBBlueArtists = [];
-var RnBPurpleArtists = [];
-var RnBPinkArtists = [];
-var RnBBrownArtists = [];
-var RnBBlackArtists = [];
-var RnBWhiteArtists = [];
-var RnBBeigeArtists = [];
-var RnBGrayArtists = [];
+var RnBGreenArtists = ["Jidenna","Joe","Jhene Aiko","Klymaxx","Deniece Williams"];
+var RnBBlueArtists = ["Bryson Tiller","Jeremih","Tinashe","Patti LaBelle","Kelly Rowland","Mary J. Blige"];
+var RnBPurpleArtists = ["Marvin Gaye"];
+var RnBPinkArtists = ["Rico Nasty"];
+var RnBBrownArtists = ["Jean Knight","Yo-Yo","Ms. Lauryn Hill","Minnie Riperton","Jocelyn Brown","Tory Lanez","Fats Domino","Frank Ocean","Eric Bellinger","Kari Faux"];
+var RnBBlackArtists = ["Lalah Hathaway","PARTYNEXTDOOR","Randy Crawford","Jeremih","August Alsina","George Benson","Beyonc�","Chris Brown","Ann Peebles","Tamia"];
+var RnBWhiteArtists = ["Leikeli47","Gladys Knight & The Pips","The Marvelettes"];
+var RnBBeigeArtists = ["Kash Doll","Martha Reeves & The Vandellas"];
+var RnBGrayArtists = ["Aaliyah","En Vogue","BJ The Chicago Kid","SZA","Xscape","Miguel","Tamia","Eric Bellinger","Beyonc�","Keyshia Cole","Tory Lanez","The Supremes","Jeremih","SWV","Brenda Russell","Meli'sa Morgan","The Staple Singers","Diana Ross","Lyn Collins","Teena Marie","Stephanie Mills"];
 
 var RnBRedCovers = [];
 var RnBOrangeCovers = [];
@@ -277,18 +277,18 @@ var RnBBeigeCovers = [];
 var RnBGrayCovers = [];
 
 //Reggae
-var ReggaeRedArtists = [];
+var ReggaeRedArtists = ["Delroy Wilson","Rita Marley"];
 var ReggaeOrangeArtists = [];
 var ReggaeYellowArtists = [];
-var ReggaeGreenArtists = [];
+var ReggaeGreenArtists = ["Bob Marley & The Wailers","Gregory Isaacs","Israel Vibration","Bob Marley & The Wailers","Toots & The Maytals","Stephen Marley"];
 var ReggaeBlueArtists = [];
 var ReggaePurpleArtists = [];
 var ReggaePinkArtists = [];
-var ReggaeBrownArtists = [];
-var ReggaeBlackArtists = [];
-var ReggaeWhiteArtists = [];
-var ReggaeBeigeArtists = [];
-var ReggaeGrayArtists = [];
+var ReggaeBrownArtists = ["Ini Kamoze","Pablo Moses","Inner Circle","Ziggy Marley"];
+var ReggaeBlackArtists = ["Alborosie"];
+var ReggaeWhiteArtists = ["Bob Marley & The Wailers"];
+var ReggaeBeigeArtists = ["Protoje","Alborosie"];
+var RnBGrayArtists = ["Junior Kelly","Gregory Isaacs","Damian Marley","Bob Marley & The Wailers","Damian Marley","UB40","UB40","Ziggy Marley & The Melody Makers","Steel Pulse","Steel Pulse","John Holt","Alpha Blondy","Jacob Miller","Wayne Wade","Max Romeo","Max Romeo","Bob Marley & The Wailers","Toots & The Maytals","Barrington Levy"];
 
 var ReggaeRedCovers = [];
 var ReggaeOrangeCovers = [];
@@ -307,15 +307,15 @@ var ReggaeGrayCovers = [];
 var MetalRedArtists = [];
 var MetalOrangeArtists = [];
 var MetalYellowArtists = [];
-var MetalGreenArtists = [];
-var MetalBlueArtists = [];
+var MetalGreenArtists = ["Marilyn Manson","Korn","Megadeth","Five Finger Death Punch","Megadeth"];
+var MetalBlueArtists = ["Fear Factory","System Of A Down","Metallica"];
 var MetalPurpleArtists = [];
 var MetalPinkArtists = [];
-var MetalBrownArtists = [];
-var MetalBlackArtists = [];
-var MetalWhiteArtists = [];
+var MetalBrownArtists = ["Judas Priest","Korn","Dio","Rage Against The Machine"];
+var MetalBlackArtists = ["Rage Against The Machine","Diamond Head","Helloween","Limp Bizkit","System Of A Down","Crazy Town","Testament","Volbeat","A Perfect Circle","All That Remains","Sepultura","Sepultura","Metallica","Rammstein","Lamb of God","Drowning Pool","Metallica","Slipknot","Helloween","Judas Priest","Killswitch Engage"];
+var MetalWhiteArtists = ["10 Years"];
 var MetalBeigeArtists = [];
-var MetalGrayArtists = [];
+var MetalGrayArtists = ["Five Finger Death Punch","Audioslave","Slayer","Disturbed","Avenged Sevenfold","Limp Bizkit","Fozzy","Judas Priest","Rage Against The Machine","Anthrax","Marilyn Manson","Limp Bizkit","Sodom","Pantera","Dio","Theory of a Deadman","Rob Zombie","System Of A Down","Papa Roach","Slipknot","Stone Sour"];
 
 
 var MetalRedCovers = [];
@@ -332,18 +332,19 @@ var MetalBeigeCovers = [];
 var MetalGrayCovers = [];
 
 //Latin
-var LatinRedArtists = [];
+var LatinRedArtists = ["Don Omar"];
 var LatinOrangeArtists = [];
 var LatinYellowArtists = [];
-var LatinGreenArtists = [];
-var LatinBlueArtists = [];
-var LatinPurpleArtists = [];
-var LatinPinkArtists = [];
-var LatinBrownArtists = [];
-var LatinBlackArtists = [];
-var LatinWhiteArtists = [];
-var LatinBeigeArtists = [];
-var LatinGrayArtists = [];
+var LatinGreenArtists = ["De La Ghetto"];
+var LatinBlueArtists = ["CNCO","Maluma","Alexis y Fido","Gente De Zona","J Balvin","Danny Ocean","J Balvin"];
+var LatinPurpleArtists = ["Daddy Yankee"];
+var LatinPinkArtists = ["Karol G"];
+var LatinBrownArtists = ["Enrique Iglesias","Sebastian Yatra","Sie7e","Thal�a","Bacilos","Paulina Rubio","Romeo Santos","Natalia Lafourcade"];
+var LatinBlackArtists = ["Wisin","Zion & Lennox","Valentino","Reykon","Oscar D'Le�n","Wisin","Pitbull","Don Omar","Romeo Santos","Nicky Jam"];
+var LatinWhiteArtists = ["Luis Fonsi","Maite Perroni","Bomba Est�reo","Chino & Nacho","Ozuna"];
+var LatinBeigeArtists = ["Jesse & Joy","Shakira","Carlos Vives"];
+var LatinGrayArtists = ["Luis Fonsi","Don Omar","CNCO","Joey MonBeigea","Matisse","IAmChino","Chayanne","CNCO","Abraham Mateo","Nicky Jam","Gente De Zona","Yandel","Juanes","Piso 21","Carlos Vives","Nacho","Luis Fonsi","J Balvin","Maluma","Ricky Martin","Jacob Forever"];
+
 
 var LatinRedCovers = [];
 var LatinOrangeCovers = [];

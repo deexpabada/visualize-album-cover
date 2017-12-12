@@ -66,8 +66,8 @@ var genreData = [
 
 var genreVisData = makeVisData(genreData);
 var genreColorCategories = makeColorCategoryList(["Rock", "Hip-Hop", "Folk", "Country", "Classical", "Electronic", "Jazz", "K-pop", "Pop", "R&B", "Reggae", "Metal", "Latin"]);
-var genreCategories = makeCategoryList(["Rock", "Hip-Hop", "Folk", "Country", "Classical", "Electronic", "Jazz", "K-pop", "Pop", "R&B", "Reggae", "Metal", "Latin"]);
-var genreCategories2 = makeCategoryList(["Rock", "HipHop", "Folk", "Country", "Classical", "Electronic", "Jazz", "Kpop", "Pop", "R&B", "Reggae", "Metal", "Latin"]);
+var genreCategories = makeCategoryList(["Rock", "Hip-Hop", "Folk", "Country", "Classical", "Electronic", "Jazz", "K-pop", "Pop", "RnB", "Reggae", "Metal", "Latin"]);
+var genreCategories2 = makeCategoryList(["Rock", "HipHop", "Folk", "Country", "Classical", "Electronic", "Jazz", "Kpop", "Pop", "RnB", "Reggae", "Metal", "Latin"]);
 var genreColorList = makeColorList(14);
 
 
@@ -132,5 +132,5 @@ var popularityData = [
 var popularityVisData = makeVisData(popularityData);
 var popularityColorCategories = makeColorCategoryList(["0-19","20-39","40-59","60-79","80-100"]);
 var popularityCategories = makeCategoryList(["0-19","20-39","40-59","60-79","80-100"]);
-var popularityCategories2 = makeCategoryList(["TwentyPop","FourtyPop","SixtyPop","EightyPop","HundredPop"]);
+var popularityCategories2 = makeCategoryList(["ZeroPop","TwentyPop","FourtyPop","SixtyPop","EightyPop"]);
 var popularityColorList = makeColorList(6);
