@@ -11,7 +11,9 @@ $(document).ready(function() {
     right: 0
   };
 
+
   var categories; //categories for this vis
+  var cat2; //used in hover interactions
   var valuesList; //data for this vis
   var colorList; //colors per category
   var rawData;
@@ -22,42 +24,52 @@ $(document).ready(function() {
   //choose from genre, year, season, tempo, popularity
   function chooseCategory(category) {
     if (category == "genre") {
+      colorCategories = genreColorCategories;
       categories = genreCategories;
       valuesList = genreVisData;
       colorList = genreColorList;
+      cat2 = genreCategories2;
       rawData = genreData;
-      $(".catButton").css('background-color',  'rgb(72,135,191)');
-      $("#genre").css('background-color','rgba(43, 161, 97, 50)');
+      $(".catButton").css('background-color', 'rgb(72,135,191)');
+      $("#genre").css('background-color', 'rgba(43, 161, 97, 50)');
     } else if (category == "year") {
+      colorCategories = yearColorCategories;
       categories = yearCategories;
       valuesList = yearVisData;
+      cat2 = yearCategories2;
       colorList = yearColorList;
       rawData = yearData;
-      $(".catButton").css('background-color',  'rgb(72,135,191)');
-      $("#year").css('background-color','rgba(43, 161, 97, 50)');
+      $(".catButton").css('background-color', 'rgb(72,135,191)');
+      $("#year").css('background-color', 'rgba(43, 161, 97, 50)');
     } else if (category == "season") {
+      colorCategories = seasonColorCategories;
       categories = seasonCategories;
+      cat2 = seasonCategories2;
       valuesList = seasonVisData;
       colorList = seasonColorList;
       rawData = seasonData;
       numSpirals = 2;
-      $(".catButton").css('background-color',  'rgb(72,135,191)');
-      $("#season").css('background-color','rgba(43, 161, 97, 50)');
+      $(".catButton").css('background-color', 'rgb(72,135,191)');
+      $("#season").css('background-color', 'rgba(43, 161, 97, 50)');
     } else if (category == "tempo") {
+      colorCategories = tempoColorCategories;
       categories = tempoCategories;
+      cat2 = tempoCategories2;
       valuesList = tempoVisData;
       colorList = tempoColorList;
       rawData = tempoData;
-      $(".catButton").css('background-color',  'rgb(72,135,191)');
-      $("#tempo").css('background-color','rgba(43, 161, 97, 50)');
+      $(".catButton").css('background-color', 'rgb(72,135,191)');
+      $("#tempo").css('background-color', 'rgba(43, 161, 97, 50)');
     } else if (category == "popularity") {
-      categories = popularityCategories;
+      colorCategories = popularityColorCategories;
+      categories = popularityCategories
+      cat2 = popularityCategories2;
       valuesList = popularityVisData;
       colorList = popularityColorList;
       rawData = popularityData;
       numSpirals = 1.6;
-      $(".catButton").css('background-color',  'rgb(72,135,191)');
-      $("#popularity").css('background-color','rgba(43, 161, 97, 50)');
+      $(".catButton").css('background-color', 'rgb(72,135,191)');
+      $("#popularity").css('background-color', 'rgba(43, 161, 97, 50)');
     }
   };
 
@@ -125,25 +137,28 @@ $(document).ready(function() {
       .style("fill", "none")
       .style("stroke", "steelblue");
 
-//------------------------------------------------
+    //------------------------------------------------
 
-  //put data in sprial
+    //put data in sprial
     var spiralLength = path.node().getTotalLength(),
-      N = categories.length,
+      N = colorCategories.length,
       barWidth = (spiralLength / N) - 1;
     var someData = [];
     for (var i = 0; i < N; i++) {
       someData.push({
-        cat: categories[i],
+        cat: colorCategories[i],
+        cat2: cat2[i],
+        category: categories[i],
         value: valuesList[i],
         color: colorList[i],
-        raw: rawData[i]
+        raw: rawData[i],
+        clicked: false
       });
     }
 
 
     var ordinalScale = d3.scaleBand()
-      .domain(categories)
+      .domain(colorCategories)
       .range([0, spiralLength]);
 
     // yScale for the bar height
@@ -153,7 +168,7 @@ $(document).ready(function() {
       })])
       .range([0, (r / numSpirals) - 20]);
 
-      //draw data in spiral
+    //draw data in spiral
     svg.selectAll("rect")
       .data(someData)
       .enter()
@@ -216,15 +231,17 @@ $(document).ready(function() {
       })
 
 
-//-----------------------------------------------------------
+    //-----------------------------------------------------------
 
-//hover interactions
+    //hover interactions
     var tooltip = d3.select(".zoomIn")
       .append('div')
       .attr('class', 'tooltip');
 
     tooltip.append('div')
-      .attr('class', 'date');
+      .attr('class', 'category');
+    tooltip.append('div')
+      .attr('class', 'color');
     tooltip.append('div')
       .attr('class', 'value');
     tooltip.append('div')
@@ -233,33 +250,66 @@ $(document).ready(function() {
       .attr('class', 'covers');
 
 
-    svg.selectAll("rect")
+
+      svg.selectAll("rect")
+      .on('click', function(d) {
+        if (!d.clicked) {
+          d.clicked=true;
+        } else {
+          d.clicked=false;
+        }
+      })
       .on('mouseover', function(d) {
+          if (d.color != "white") {
 
-        tooltip.select('.date').html("Genre and Color: <b>" + d.cat + "</b>");
-        tooltip.select('.value').html("Number of Albums: <b>" + d.raw + "</b>");
-        tooltip.select('.artists').html("Artists: <b>" + RockRedArtists + "</b>");
-        tooltip.select('.covers').html("Covers: ");
-        var albumCovers = "";
+            tooltip.select('.category').html("Category: <b>" + d.category + "</b>");
+            if (d.color == "burlywood") {
+              tooltip.select('.color').html("Color: <b> Beige</b>");
+            } else if (d.color == "antiqueWhite") {
+              tooltip.select('.color').html("Color: <b> White </b>");
+            } else {
+              tooltip.select('.color').html("Color: <b>" + d.color + "</b>");
+            }
+            tooltip.select('.value').html("Number of Albums: <b>" + d.raw + "</b>");
 
-        //add album covers for each category/color combo
-        for (i=0; i < RockRedCovers.length; i++) {
-        albumCovers += "<img src=" + RockRedCovers[i]+">";
-      }
-      tooltip.select('.covers').html(albumCovers);
+            if (d.raw != 0) {
+              var colorTemp;
+              if (d.color == "burlywood") {
+                colorTemp = "Beige";
+              } else if (d.color == "antiqueWhite") {
+                colorTemp = "White";
+              } else {
+                colorTemp = d.color;
+              }
 
-        d3.select(this)
-          .style("fill", d.color)
-          .style("stroke", "#000000")
-          .style("stroke-width", "3px");
+              var artistInput = d.cat2.concat(colorTemp).concat("Artists");
+              var coverInput = d.cat2.concat(colorTemp).concat("Covers");
+              //raw values of artists and album covers
+              tooltip.select('.artists').html("Artists: <b>" + window[artistInput] + "</b>");
+              tooltip.select('.covers').html("Covers: ");
+              var albumCovers = "";
 
-        tooltip.style('display', 'block');
-        tooltip.style('opacity', 2);
+              //add album covers for each category/color combo
+              for (i = 0; i < window[coverInput].length; i++) {
+                albumCovers += "<img src=" + window[coverInput][i] + ">";
+              }
+              tooltip.select('.covers').html(albumCovers);
+          }
+
+            d3.select(this)
+              .style("fill", d.color)
+              .style("stroke", "#000000")
+              .style("stroke-width", "3px");
+
+            tooltip.style('display', 'block');
+            tooltip.style('opacity', 2);
+          }
 
       })
-      .on('mousemove', function(d) {
+      .on('mousemove', function() {
       })
       .on('mouseout', function(d) {
+        if(!d.clicked) {
         d3.selectAll("rect")
           .style("fill", function(d) {
             return d.color;
@@ -268,12 +318,15 @@ $(document).ready(function() {
 
         tooltip.style('display', 'none');
         tooltip.style('opacity', 0);
+      }
       });
 
-      $("#redKey").hover(
-        function() {
+
+//Hover interaction for color bar to filter ----------------------------------------------
+    $("#redKey").hover(
+      function() {
         svg.selectAll("rect").style("fill", function(d) {
-          if(d.color == "Red") {
+          if (d.color == "Red") {
             return d.color;
           } else if (d.color == "white") {
             return "white";
@@ -284,13 +337,13 @@ $(document).ready(function() {
       },
       function() {
         svg.selectAll("rect").style("fill", function(d) {
-            return d.color;
-          });
+          return d.color;
+        });
       });
-      $("#orangeKey").hover(
-        function() {
+    $("#orangeKey").hover(
+      function() {
         svg.selectAll("rect").style("fill", function(d) {
-          if(d.color == "Orange") {
+          if (d.color == "Orange") {
             return d.color;
           } else if (d.color == "white") {
             return "white";
@@ -301,13 +354,13 @@ $(document).ready(function() {
       },
       function() {
         svg.selectAll("rect").style("fill", function(d) {
-            return d.color;
-          });
+          return d.color;
+        });
       });
-      $("#yellowKey").hover(
-        function() {
+    $("#yellowKey").hover(
+      function() {
         svg.selectAll("rect").style("fill", function(d) {
-          if(d.color == "Yellow") {
+          if (d.color == "Yellow") {
             return d.color;
           } else if (d.color == "white") {
             return "white";
@@ -319,12 +372,13 @@ $(document).ready(function() {
       },
       function() {
         svg.selectAll("rect").style("fill", function(d) {
-            return d.color;
-          });
-      });$("#greenKey").hover(
-        function() {
+          return d.color;
+        });
+      });
+    $("#greenKey").hover(
+      function() {
         svg.selectAll("rect").style("fill", function(d) {
-          if(d.color == "Green") {
+          if (d.color == "Green") {
             return d.color;
           } else if (d.color == "white") {
             return "white";
@@ -336,12 +390,13 @@ $(document).ready(function() {
       },
       function() {
         svg.selectAll("rect").style("fill", function(d) {
-            return d.color;
-          });
-      });$("#blueKey").hover(
-        function() {
+          return d.color;
+        });
+      });
+    $("#blueKey").hover(
+      function() {
         svg.selectAll("rect").style("fill", function(d) {
-          if(d.color == "Blue") {
+          if (d.color == "Blue") {
             return d.color;
           } else if (d.color == "white") {
             return "white";
@@ -353,12 +408,13 @@ $(document).ready(function() {
       },
       function() {
         svg.selectAll("rect").style("fill", function(d) {
-            return d.color;
-          });
-      });$("#purpleKey").hover(
-        function() {
+          return d.color;
+        });
+      });
+    $("#purpleKey").hover(
+      function() {
         svg.selectAll("rect").style("fill", function(d) {
-          if(d.color == "Purple") {
+          if (d.color == "Purple") {
             return d.color;
           } else if (d.color == "white") {
             return "white";
@@ -370,12 +426,13 @@ $(document).ready(function() {
       },
       function() {
         svg.selectAll("rect").style("fill", function(d) {
-            return d.color;
-          });
-      });$("#pinkKey").hover(
-        function() {
+          return d.color;
+        });
+      });
+    $("#pinkKey").hover(
+      function() {
         svg.selectAll("rect").style("fill", function(d) {
-          if(d.color == "Pink") {
+          if (d.color == "Pink") {
             return d.color;
           } else if (d.color == "white") {
             return "white";
@@ -387,12 +444,13 @@ $(document).ready(function() {
       },
       function() {
         svg.selectAll("rect").style("fill", function(d) {
-            return d.color;
-          });
-      });$("#brownKey").hover(
-        function() {
+          return d.color;
+        });
+      });
+    $("#brownKey").hover(
+      function() {
         svg.selectAll("rect").style("fill", function(d) {
-          if(d.color == "Brown") {
+          if (d.color == "Brown") {
             return d.color;
           } else if (d.color == "white") {
             return "white";
@@ -404,12 +462,13 @@ $(document).ready(function() {
       },
       function() {
         svg.selectAll("rect").style("fill", function(d) {
-            return d.color;
-          });
-      });$("#blackKey").hover(
-        function() {
+          return d.color;
+        });
+      });
+    $("#blackKey").hover(
+      function() {
         svg.selectAll("rect").style("fill", function(d) {
-          if(d.color == "Black") {
+          if (d.color == "Black") {
             return d.color;
           } else if (d.color == "white") {
             return "white";
@@ -421,12 +480,13 @@ $(document).ready(function() {
       },
       function() {
         svg.selectAll("rect").style("fill", function(d) {
-            return d.color;
-          });
-      });$("#whiteKey").hover(
-        function() {
+          return d.color;
+        });
+      });
+    $("#whiteKey").hover(
+      function() {
         svg.selectAll("rect").style("fill", function(d) {
-          if(d.color == "antiqueWhite") {
+          if (d.color == "antiqueWhite") {
             return d.color;
           } else if (d.color == "white") {
             return "white";
@@ -438,12 +498,13 @@ $(document).ready(function() {
       },
       function() {
         svg.selectAll("rect").style("fill", function(d) {
-            return d.color;
-          });
-      });$("#beigeKey").hover(
-        function() {
+          return d.color;
+        });
+      });
+    $("#beigeKey").hover(
+      function() {
         svg.selectAll("rect").style("fill", function(d) {
-          if(d.color == "burlywood") {      //beige = burlywood for vis purposes
+          if (d.color == "burlywood") { //beige = burlywood for vis purposes
             return d.color;
           } else if (d.color == "white") {
             return "white";
@@ -454,12 +515,13 @@ $(document).ready(function() {
       },
       function() {
         svg.selectAll("rect").style("fill", function(d) {
-            return d.color;
-          });
-      });$("#grayKey").hover(
-        function() {
+          return d.color;
+        });
+      });
+    $("#grayKey").hover(
+      function() {
         svg.selectAll("rect").style("fill", function(d) {
-          if(d.color == "Gray") {
+          if (d.color == "Gray") {
             return d.color;
           } else if (d.color == "white") {
             return "white";
@@ -470,8 +532,8 @@ $(document).ready(function() {
       },
       function() {
         svg.selectAll("rect").style("fill", function(d) {
-            return d.color;
-          });
+          return d.color;
+        });
       });
 
 

@@ -1,4 +1,4 @@
-var colorTemplate = ["white",'Red','Orange','Yellow','Green','Blue','Purple','Pink','Brown','Black','antiqueWhite','burlywood','Gray'];   //white = beige for visibility; burlywood = beige
+var colorTemplate = ["white",'Red','Orange','Yellow','Green','Blue','Purple','Pink','Brown','Black','antiqueWhite','burlywood','Gray'];   //white = antiquewhite for visibility; burlywood = beige
 
 function makeColorList(num) {
   var customColorTemplate = []
@@ -10,11 +10,21 @@ function makeColorList(num) {
 
 
 var colorList =  ["",'Red','Orange','Yellow','Green','Blue','Purple','Pink','Brown','Black','White','Beige','Gray'];
-function makeCategoryList(inputList) {
+function makeColorCategoryList(inputList) {
   var newCatList = [];
   for (i = 0; i < inputList.length; i++) {
     for (j = 0; j < colorList.length; j++) {
         newCatList.push(inputList[i].concat(colorList[j]));
+    };
+  };
+  return newCatList;
+};
+
+function makeCategoryList(inputList) {
+  var newCatList = [];
+  for (i = 0; i < inputList.length; i++) {
+    for (j = 0; j < colorList.length; j++) {
+        newCatList.push(inputList[i]);
     };
   };
   return newCatList;
@@ -55,8 +65,11 @@ var genreData = [
 -1,0,0,0,2,7,1,1,8,10,5,3,43] //latin
 
 var genreVisData = makeVisData(genreData);
+var genreColorCategories = makeColorCategoryList(["Rock", "Hip-Hop", "Folk", "Country", "Classical", "Electronic", "Jazz", "K-pop", "Pop", "R&B", "Reggae", "Metal", "Latin"]);
 var genreCategories = makeCategoryList(["Rock", "Hip-Hop", "Folk", "Country", "Classical", "Electronic", "Jazz", "K-pop", "Pop", "R&B", "Reggae", "Metal", "Latin"]);
+var genreCategories2 = makeCategoryList(["Rock", "HipHop", "Folk", "Country", "Classical", "Electronic", "Jazz", "Kpop", "Pop", "R&B", "Reggae", "Metal", "Latin"]);
 var genreColorList = makeColorList(14);
+
 
 //year-------------------------------------------------------
 var yearData = [
@@ -69,7 +82,9 @@ var yearData = [
 ]
 
 var yearVisData = makeVisData(yearData);
-var yearCategories = makeCategoryList(["1960","1970","1980","1990","2000","2010"]);
+var yearColorCategories = makeColorCategoryList(["1960s","1970s","1980s","1990s","2000s","2010s"]);
+var yearCategories = makeCategoryList(["1960s","1970s","1980s","1990s","2000s","2010s"]);
+var yearCategories2 = makeCategoryList(["Sixties","Seventies","Eighties","Nineties","TwoThousands","TwentyTens"]);
 var yearColorList = makeColorList(7);
 
 //season------------------------------
@@ -81,7 +96,9 @@ var seasonData = [
 ]
 
 var seasonVisData = makeVisData(seasonData);
+var seasonColorCategories = makeColorCategoryList(["Spring","Summer","Fall","Winter"]);
 var seasonCategories = makeCategoryList(["Spring","Summer","Fall","Winter"]);
+var seasonCategories2 = makeCategoryList(["Spring","Summer","Fall","Winter"]);
 var seasonColorList = makeColorList(5);
 
 //tempo--------------------------------------
@@ -98,7 +115,9 @@ var tempoData = [
 ]
 
 var tempoVisData = makeVisData(tempoData);
-var tempoCategories = makeCategoryList(["40","60","80","100","120","140","160","180","200"]);
+var tempoColorCategories = makeColorCategoryList(["40-59","60-79","80-99","100-119","120-139","140-159","160-179","180-199","200-219"]);
+var tempoCategories = makeCategoryList(["40-59","60-79","80-99","100-119","120-139","140-159","160-179","180-199","200-219"]);
+var tempoCategories2 = makeCategoryList(["Fourty","Sixty","Eighty","Hundred","HundredTwenty","HundredFourty","HundredSixty","HundredEighty","TwoHundred"]);
 var tempoColorList = makeColorList(10);
 
 //popularity-----------------------------------------------------------
@@ -111,5 +130,7 @@ var popularityData = [
 ]
 
 var popularityVisData = makeVisData(popularityData);
-var popularityCategories = makeCategoryList(["0","20","40","60","80"]);
+var popularityColorCategories = makeColorCategoryList(["0-19","20-39","40-59","60-79","80-100"]);
+var popularityCategories = makeCategoryList(["0-19","20-39","40-59","60-79","80-100"]);
+var popularityCategories2 = makeCategoryList(["TwentyPop","FourtyPop","SixtyPop","EightyPop","HundredPop"]);
 var popularityColorList = makeColorList(6);

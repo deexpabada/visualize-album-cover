@@ -1,6 +1,8 @@
+//Genres
+//Rock
 var RockRedArtists = ["Queens of the Stone Age","Third Eye Blind","Aerosmith","The White Stripes"];
 var RockOrangeArtists = [];
-var RockYellowArtist = [];
+var RockYellowArtists = [];
 var RockGreenArtists = ["Bishop Briggs","Donovan","ZZ Top","Motley Crue","Kid Rock","Aerosmith","The Offspring","The Doobie Brothers","Cream","Creedence Clearwater Revival","Anti-Flag","Weezer"];
 var RockBlueArtists = ["Fall Out Boy","Nirvana","Weezer","The Beatles","The Smashing Pumpkins","The Who","AC/DC","The Killers","AWOLNATION","Led Zeppelin","The Killers","Green Day"];
 var RockPurpleArtists = [];
@@ -24,7 +26,334 @@ var RockBrownCovers = ["https://i.scdn.co/image/71e6a72a1b3a00d2ddabee9a3e2d5ade
 "https://i.scdn.co/image/ff71d87f1851d43bac44a37da93bcb2a21a7c103","https://i.scdn.co/image/a1202e3c454e45734adcb38e697992223cf1f1a9","https://i.scdn.co/image/7be9cbb0a86c5d3ce91310b2a5375190a6004ec6  ","https://i.scdn.co/image/f95935461bce5ff290d78e0bc68e8b1ffe8192b7","https://i.scdn.co/image/c3491a66365f5ab9b6729cfaced05fee06e30a93","https://i.scdn.co/image/80a1ff1574dbbd1d5a722b03395df8e5b9d41ab4","https://i.scdn.co/image/77b344205e5e42ab6ef4fd3fa6759ab4528ee2ea"];
 var RockBlackCovers = ["https://i.scdn.co/image/8e653240017bbb3fba7313dfa4a887cc06a4a238","https://i.scdn.co/image/9e6d6908d0bffe5d6d58748d453f9f2e6181c2d1","https://i.scdn.co/image/f491552bd6193c4622f1b4235bdf8179911ed1b0","https://i.scdn.co/image/23f0e53e68858fe25ab574eca5821849496b45d4","https://i.scdn.co/image/9b312163180f5adb5901ba8ab8b1b25fd0740d66","https://i.scdn.co/image/8cb8c9552c65730a15302d7b74d38cbc14f6d7fb","https://i.scdn.co/image/0407568bb7145bba92427574d65a25430119210f","https://i.scdn.co/image/dcdbaf864f35cb4fdba68f82f5fe66c73f1d11a4","https://i.scdn.co/image/570650cb379f86234d2ad10bd7a443327979bc9d","https://i.scdn.co/image/98ae5260657d85788a079c68dcc4aa0ff698c61e","https://i.scdn.co/image/4ccbd042736d2ff4a4a5dab6131c075d1af0592b","https://i.scdn.co/image/63a37f32006eab70bd58c892e4098f2a84bb915e","https://i.scdn.co/image/886c0fe47aac8e31bcab118a182638e254372389","https://i.scdn.co/image/0fbe3c2ba5d231d626a60976b7f03d21526376f5",
 "https://i.scdn.co/image/e5f5a50956c2c7dd5411051ca507b4f771d6d816","https://i.scdn.co/image/339704434b2733dbeb446472e588d03d5423084b","https://i.scdn.co/image/16f2cbdeacd1fb73f59618aa44cb943e96229b41","https://i.scdn.co/image/52d83377fe9d7fc838deeb859499f3973adf903f","https://i.scdn.co/image/eb97e6eb739f539a6eca14bde45cd6a4db75afdd","https://i.scdn.co/image/5cda02bec1450918ab920e84f034b06f45303058","https://i.scdn.co/image/3ef91e710ba04b2b1b1ae2e69aecbdd83b038424"];
-var RockWhiteCovers = [,"https://i.scdn.co/image/5e553d65e84fde60e3293ce2138a52e5f5b3ec10","https://i.scdn.co/image/afa7b61787f4ae5ea245b927aa301ab3a1f263c7","https://i.scdn.co/image/8bc868f685bffbef1e10da37b879e19022f713c7","https://i.scdn.co/image/61fbfc12c92752d2334547c00d5f13b8b7edba94","https://i.scdn.co/image/85ad2f58633be509d371f2ebda235c07fdd5a08e","https://i.scdn.co/image/7a8bb797da6d4c6c8b627135500a9db44a38f58f","https://i.scdn.co/image/5c77c792b83fe91d8023c03402573f4af9e53911","https://i.scdn.co/image/22f896de1f5d43ee19b339f263c2d02c7b53e182","https://i.scdn.co/image/a635106f337f4216c7c05f72e43aac71c89c9d77","https://i.scdn.co/image/df336667c74abdfe56835e54712cdea8acc55814","https://i.scdn.co/image/8efb25315084d6a01748deb0af455fa154775bda","https://i.scdn.co/image/a1eccc5f4b2158ed8c021ca5aaec245c87f300eb"];
+var RockWhiteCovers = ["https://i.scdn.co/image/5e553d65e84fde60e3293ce2138a52e5f5b3ec10","https://i.scdn.co/image/afa7b61787f4ae5ea245b927aa301ab3a1f263c7","https://i.scdn.co/image/8bc868f685bffbef1e10da37b879e19022f713c7","https://i.scdn.co/image/61fbfc12c92752d2334547c00d5f13b8b7edba94","https://i.scdn.co/image/85ad2f58633be509d371f2ebda235c07fdd5a08e","https://i.scdn.co/image/7a8bb797da6d4c6c8b627135500a9db44a38f58f","https://i.scdn.co/image/5c77c792b83fe91d8023c03402573f4af9e53911","https://i.scdn.co/image/22f896de1f5d43ee19b339f263c2d02c7b53e182","https://i.scdn.co/image/a635106f337f4216c7c05f72e43aac71c89c9d77","https://i.scdn.co/image/df336667c74abdfe56835e54712cdea8acc55814","https://i.scdn.co/image/8efb25315084d6a01748deb0af455fa154775bda","https://i.scdn.co/image/a1eccc5f4b2158ed8c021ca5aaec245c87f300eb"];
 var RockBeigeCovers = ["https://i.scdn.co/image/66f808e859993f0100fea78f37462ea8925f9ec2","https://i.scdn.co/image/4d8256cad24fce3afd07d4a3d21d379f00388dfc","https://i.scdn.co/image/df6d664c56fc929d07b9e0e60d83319d26dc82f0","https://i.scdn.co/image/7587959b71e16f93fe668464ecdd4dd0c7aa9923","https://i.scdn.co/image/84215dac3aff5e7060cbb1209fc63ba62f80a8d9","https://i.scdn.co/image/6212b0659d60bdd9b10ccd5976759e820fe9c864","https://i.scdn.co/image/3bf4181e5b2f4b3728fa39e502310bf074a34cfa","https://i.scdn.co/image/70149c6e3d436c62c97970f0c41f89012a718e58","https://i.scdn.co/image/3bd51bccab26a6bbed9ffc9e61cfa0bfa8a8d746"];
 var RockGrayCovers = ["https://i.scdn.co/image/594340fd535de088674b20df30f1cc8d4cec8640","https://i.scdn.co/image/e4d437831cccc9967dc92726c59e855ac59d6abd","https://i.scdn.co/image/f55a6b339d3a4d4fc3a624d77f7ecb1c64930c99","https://i.scdn.co/image/10bcac84a08e89b4d890509584fc3e7b167f549f","https://i.scdn.co/image/1b2dea302aea0f4aba76f6c13fdd9981db14f050","https://i.scdn.co/image/c25c00b1924f3cc303377224a8a22aa46e7bfadc","https://i.scdn.co/image/927a0b3a207f999eaf94aa1f9b92b8900c95e014","https://i.scdn.co/image/5fa3a6cc1848ea743a293d2088046746d1b09608","https://i.scdn.co/image/b52c814ec03977643ecbb8f47a96e5705fed8d83","https://i.scdn.co/image/ced9e563b1c1fe9a9ae16ee615e1cc2aac4ae133","https://i.scdn.co/image/34b238f37cafaf4171334955a0bdf689b7d9b1d4","https://i.scdn.co/image/3b4b6c358ca5d3c362380fd7a78207a2c693ec29","https://i.scdn.co/image/a4d48364ab1b5a69b6d1b2e8ddf84e3ba5e6d96a","https://i.scdn.co/image/82a524741433e305f57cc8a69b824689bff536ad",
 "https://i.scdn.co/image/5a6a1c6514398dc4004c6348a83d77694a3883d4","https://i.scdn.co/image/66ff51342a9b250bf5b998fd0ec8e977671468bc","https://i.scdn.co/image/e4f436716843d498bda75a0fb1792df79d3471cc","https://i.scdn.co/image/9ed6534e737d8336d6480024e50eef9bf74deb47","https://i.scdn.co/image/0074e12e5155e33f46285b7ba5ed5f0b297d94e0","https://i.scdn.co/image/d583f1543f6a9fd58e5f79bc3a5358d943258096","https://i.scdn.co/image/13d0fc217119d644c2c6ac245059e5411d643ff3"];
+
+
+//Hiphop
+var HipHopRedArtists = [];
+var HipHopOrangeArtists = [];
+var HipHopYellowArtists = [];
+var HipHopGreenArtists = [];
+var HipHopBlueArtists = [];
+var HipHopPurpleArtists = [];
+var HipHopPinkArtists = [];
+var HipHopBrownArtists = [];
+var HipHopBlackArtists = [];
+var HipHopWhiteArtists = [];
+var HipHopBeigeArtists = [];
+var HipHopGrayArtists = [];
+
+var HipHopRedCovers = [];
+var HipHopOrangeCovers = [];
+var HipHopYellowCovers = [];
+var HipHopGreenCovers = [];
+var HipHopBlueCovers = [];
+var HipHopPurpleCovers = [];
+var HipHopPinkCovers = [];
+var HipHopBrownCovers = [];
+var HipHopBlackCovers = [];
+var HipHopWhiteCovers = [];
+var HipHopBeigeCovers = [];
+var HipHopGrayCovers = [];
+
+//Folk
+var FolkRedArtists = [];
+var FolkOrangeArtists = [];
+var FolkYellowArtists = [];
+var FolkGreenArtists = [];
+var FolkBlueArtists = [];
+var FolkPurpleArtists = [];
+var FolkPinkArtists = [];
+var FolkBrownArtists = [];
+var FolkBlackArtists = [];
+var FolkWhiteArtists = [];
+var FolkBeigeArtists = [];
+var FolkGrayArtists = [];
+
+var FolkRedCovers = [];
+var FolkOrangeCovers = [];
+var FolkYellowCovers = [];
+var FolkGreenCovers = [];
+var FolkBlueCovers = [];
+var FolkPurpleCovers = [];
+var FolkPinkCovers = [];
+var FolkBrownCovers = [];
+var FolkBlackCovers = [];
+var FolkWhiteCovers = [];
+var FolkBeigeCovers = [];
+var FolkGrayCovers = [];
+
+//Country
+var CountryRedArtists = [];
+var CountryOrangeArtists = [];
+var CountryYellowArtists = [];
+var CountryGreenArtists = [];
+var CountryBlueArtists = [];
+var CountryPurpleArtists = [];
+var CountryPinkArtists = [];
+var CountryBrownArtists = [];
+var CountryBlackArtists = [];
+var CountryWhiteArtists = [];
+var CountryBeigeArtists = [];
+var CountryGrayArtists = [];
+
+var CountryRedCovers = [];
+var CountryOrangeCovers = [];
+var CountryYellowCovers = [];
+var CountryGreenCovers = [];
+var CountryBlueCovers = [];
+var CountryPurpleCovers = [];
+var CountryPinkCovers = [];
+var CountryBrownCovers = [];
+var CountryBlackCovers = [];
+var CountryWhiteCovers = [];
+var CountryBeigeCovers = [];
+var CountryGrayCovers = [];
+
+//Classical
+var ClassicalRedArtists = [];
+var ClassicalOrangeArtists = [];
+var ClassicalYellowArtists = [];
+var ClassicalGreenArtists = [];
+var ClassicalBlueArtists = [];
+var ClassicalPurpleArtists = [];
+var ClassicalPinkArtists = [];
+var ClassicalBrownArtists = [];
+var ClassicalBlackArtists = [];
+var ClassicalWhiteArtists = [];
+var ClassicalBeigeArtists = [];
+var ClassicalGrayArtists = [];
+
+var ClassicalRedCovers = [];
+var ClassicalOrangeCovers = [];
+var ClassicalYellowCovers = [];
+var ClassicalGreenCovers = [];
+var ClassicalBlueCovers = [];
+var ClassicalPurpleCovers = [];
+var ClassicalPinkCovers = [];
+var ClassicalBrownCovers = [];
+var ClassicalBlackCovers = [];
+var ClassicalWhiteCovers = [];
+var ClassicalBeigeCovers = [];
+var ClassicalGrayCovers = [];
+
+//Electronic
+var ElectronicRedArtists = [];
+var ElectronicOrangeArtists = [];
+var ElectronicYellowArtists = [];
+var ElectronicGreenArtists = [];
+var ElectronicBlueArtists = [];
+var ElectronicPurpleArtists = [];
+var ElectronicPinkArtists = [];
+var ElectronicBrownArtists = [];
+var ElectronicBlackArtists = [];
+var ElectronicWhiteArtists = [];
+var ElectronicBeigeArtists = [];
+var ElectronicGrayArtists = [];
+
+var ElectronicRedCovers = [];
+var ElectronicOrangeCovers = [];
+var ElectronicYellowCovers = [];
+var ElectronicGreenCovers = [];
+var ElectronicBlueCovers = [];
+var ElectronicPurpleCovers = [];
+var ElectronicPinkCovers = [];
+var ElectronicBrownCovers = [];
+var ElectronicBlackCovers = [];
+var ElectronicWhiteCovers = [];
+var ElectronicBeigeCovers = [];
+var ElectronicGrayCovers = [];
+
+//Jazz
+var JazzRedArtists = [];
+var JazzOrangeArtists = [];
+var JazzYellowArtists = [];
+var JazzGreenArtists = [];
+var JazzBlueArtists = [];
+var JazzPurpleArtists = [];
+var JazzPinkArtists = [];
+var JazzBrownArtists = [];
+var JazzBlackArtists = [];
+var JazzWhiteArtists = [];
+var JazzBeigeArtists = [];
+var JazzGrayArtists = [];
+
+var JazzRedCovers = [];
+var JazzOrangeCovers = [];
+var JazzYellowCoverst = [];
+var JazzGreenCovers = [];
+var JazzBlueCovers = [];
+var JazzPurpleCovers = [];
+var JazzPinkCovers = [];
+var JazzBrownCovers = [];
+var JazzBlackCovers = [];
+var JazzWhiteCovers = [];
+var JazzBeigeCovers = [];
+var JazzGrayCovers = [];
+
+//Kpop
+var KpopRedArtists = [];
+var KpopOrangeArtists = [];
+var KpopYellowArtists = [];
+var KpopGreenArtists = [];
+var KpopBlueArtists = [];
+var KpopPurpleArtists = [];
+var KpopPinkArtists = [];
+var KpopBrownArtists = [];
+var KpopBlackArtists = [];
+var KpopWhiteArtists = [];
+var KpopBeigeArtists = [];
+var KpopGrayArtists = [];
+
+
+var KpopRedCovers = [];
+var KpopOrangeCovers = [];
+var KpopYellowCovers = [];
+var KpopGreenCovers = [];
+var KpopBlueCovers = [];
+var KpopPurpleCovers = [];
+var KpopPinkCovers = [];
+var KpopBrownCovers = [];
+var KpopBlackCovers = [];
+var KpopWhiteCovers = [];
+var KpopBeigeCovers = [];
+var KpopGrayCovers = [];
+
+//Pop
+var PopRedArtists = [];
+var PopOrangeArtists = [];
+var PopYellowArtists = [];
+var PopGreenArtists = [];
+var PopBlueArtists = [];
+var PopPurpleArtists = [];
+var PopPinkArtists = [];
+var PopBrownArtists = [];
+var PopBlackArtists = [];
+var PopWhiteArtists = [];
+var PopBeigeArtists = [];
+var PopGrayArtists = [];
+
+var PopRedCovers = [];
+var PopOrangeCovers = [];
+var PopYellowCovers = [];
+var PopGreenCovers = [];
+var PopBlueCovers = [];
+var PopPurpleCovers = [];
+var PopPinkCovers = [];
+var PopBrownCovers = [];
+var PopBlackCovers = [];
+var PopWhiteCovers = [];
+var PopBeigeCovers = [];
+var PopGrayCovers = [];
+
+//RnB
+var RnBRedArtists = [];
+var RnBOrangeArtists = [];
+var RnBYellowArtists = [];
+var RnBGreenArtists = [];
+var RnBBlueArtists = [];
+var RnBPurpleArtists = [];
+var RnBPinkArtists = [];
+var RnBBrownArtists = [];
+var RnBBlackArtists = [];
+var RnBWhiteArtists = [];
+var RnBBeigeArtists = [];
+var RnBGrayArtists = [];
+
+var RnBRedCovers = [];
+var RnBOrangeCovers = [];
+var RnBYellowCovers = [];
+var RnBGreenCovers = [];
+var RnBBlueCovers = [];
+var RnBPurpleCovers = [];
+var RnBPinkCovers = [];
+var RnBBrownCovers = [];
+var RnBBlackCovers = [];
+var RnBWhiteCovers = [];
+var RnBBeigeCovers = [];
+var RnBGrayCovers = [];
+
+//Reggae
+var ReggaeRedArtists = [];
+var ReggaeOrangeArtists = [];
+var ReggaeYellowArtists = [];
+var ReggaeGreenArtists = [];
+var ReggaeBlueArtists = [];
+var ReggaePurpleArtists = [];
+var ReggaePinkArtists = [];
+var ReggaeBrownArtists = [];
+var ReggaeBlackArtists = [];
+var ReggaeWhiteArtists = [];
+var ReggaeBeigeArtists = [];
+var ReggaeGrayArtists = [];
+
+var ReggaeRedCovers = [];
+var ReggaeOrangeCovers = [];
+var ReggaeYellowCovers = [];
+var ReggaeGreenCovers = [];
+var ReggaeBlueCovers = [];
+var ReggaePurpleCovers = [];
+var ReggaePinkCovers = [];
+var ReggaeBrownCovers = [];
+var ReggaeBlackCovers = [];
+var ReggaeWhiteCovers = [];
+var ReggaeBeigeCovers = [];
+var ReggaeGrayCovers = [];
+
+//Metal
+var MetalRedArtists = [];
+var MetalOrangeArtists = [];
+var MetalYellowArtists = [];
+var MetalGreenArtists = [];
+var MetalBlueArtists = [];
+var MetalPurpleArtists = [];
+var MetalPinkArtists = [];
+var MetalBrownArtists = [];
+var MetalBlackArtists = [];
+var MetalWhiteArtists = [];
+var MetalBeigeArtists = [];
+var MetalGrayArtists = [];
+
+
+var MetalRedCovers = [];
+var MetalOrangeCovers = [];
+var MetalYellowCovers = [];
+var MetalGreenCovers = [];
+var MetalBlueCovers = [];
+var MetalPurpleCovers = [];
+var MetalPinkCovers = [];
+var MetalBrownCovers = [];
+var MetalBlackCovers = [];
+var MetalWhiteCovers = [];
+var MetalBeigeCovers = [];
+var MetalGrayCovers = [];
+
+//Latin
+var LatinRedArtists = [];
+var LatinOrangeArtists = [];
+var LatinYellowArtists = [];
+var LatinGreenArtists = [];
+var LatinBlueArtists = [];
+var LatinPurpleArtists = [];
+var LatinPinkArtists = [];
+var LatinBrownArtists = [];
+var LatinBlackArtists = [];
+var LatinWhiteArtists = [];
+var LatinBeigeArtists = [];
+var LatinGrayArtists = [];
+
+var LatinRedCovers = [];
+var LatinOrangeCovers = [];
+var LatinYellowCovers = [];
+var LatinGreenCovers = [];
+var LatinBlueCovers = [];
+var LatinPurpleCovers = [];
+var LatinPinkCovers = [];
+var LatinBrownCovers = [];
+var LatinBlackCovers = [];
+var LatinWhiteCovers = [];
+var LatinBeigeCovers = [];
+var LatinGrayCovers = [];

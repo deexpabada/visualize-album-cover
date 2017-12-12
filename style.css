@@ -13,6 +13,7 @@ img {
   margin: 0;
 }
 
+
 #titleText {
   position: absolute;
   top: 20px;
@@ -95,7 +96,7 @@ img {
 
 
 .zoomIn {
-  padding-top: 150px;
+  padding-top: 50px;
 }
 
 .toggleButtons {
