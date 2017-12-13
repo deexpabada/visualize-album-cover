@@ -138,7 +138,7 @@ path.spiral {
 .tooltip {
   font-size: 40px;
   font-family: "Helvetica";
-  padding: 10px;
+  padding: 0;
   text-align: center;
   z-index: 10;
   display: block;
