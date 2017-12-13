@@ -1,42 +1,155 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-
 // browserify js.js -o bundle.js
-// Don't forget to run browerify to get the bundle.js
+
 
 var SpotifyWebApi = require('spotify-web-api-js');
 
 var spotifyApi = new SpotifyWebApi({
-  clientId : 'dfd789f848ac45dab9aafe737f717abc',
-  clientSecret : 'fed50c0b74014e338f49d5416ac3ef9d',
-  redirectUri : 'http://localhost:8888/callback'
+  clientId: 'dfd789f848ac45dab9aafe737f717abc',
+  clientSecret: 'fed50c0b74014e338f49d5416ac3ef9d',
+  redirectUri: 'http://localhost:8888/callback'
 });
 
-//get all albums from artist
-  spotifyApi.setAccessToken('BQDZOSeryDWrr9RmVqMCcLCzaeEbP_qdoenSYFpGFuL7_Y0XfUvglA6nZah3PJcBGv2PCJ7jYGkJmZ9hfrHZOEkjj6BF6ZxZ2DUAt1cyY8pIK4eMXYdoCxYgPIVBAKeKiYZWBVx0sGw2gHAX8R-DbkFRohFqAJI');
-  spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', function(err, data) {
-    if (err) console.error(err);
-    else console.log('Artist albums', data);
+
+//Access spotify --> refresh token every hour
+spotifyApi.setAccessToken('BQBJ2NIWLT3CBN0mlaDTCgZVeRqGn3f-_sbtvMZvO-d5q5N8m0swnZHXwGTBfdXN9OGKfyhd-XfFOjZaQXP1GzjSV3mai9tsKdWtg7z4VUpAVzknyjLJQxiop3Fj6iBEiqoB9Sm3zkErCpeHiphtdGXXH-IU4uEyUw');
+
+var tracks = [];
+//get tracks from Playlists
+// spotifyApi.getPlaylistTracks('spotify', '37i9dQZF1DX9tPFwDMOaN1', {offset: 0}, function(err, data) {
+//     if
+//       (err) console.error(err)
+//
+//     else
+//       parseJson(data);
+// });
+
+var temp = [
+'2jKP7xYfjx8yuVnC1LFQT', '6iI6NXjtI3IkjK2k1juqaX','63OFKbMaZSDZ4wtesuuq6f','4wACv3JAUdAzmRdGat6ZuK','4vO9dmzNRqDhFY3jD1a3P7','1fDsrQ23eTAVFElUMaf38X','1XogctkYSgvS6R4zSKRLkQ','0M7oqERflkrJVHD3IAZqxo',
+'6kZFIsYCBeuH0f1zGk1UoM','5MxNLUsfh7uzROypsoO5qe','0N0q5D8KmH13mmODXJsJqS','3o7McydZKC1XPxpWxAY8ip','2f0P7iELCvAlV8j6Z3rGDE','4DMKwE2E2iYDKY01C335Uw','6NTqBHONQqmud0ONBzsLfZ','4cCQ0wBIc9YHhvOWvWNj7S',
+'2UgZeV435iztRTLrUeOrtk','1XRW0FW61bznuK3XDKFiKv','7Kwa03KjnP6UtKJLQorNmM','6IcU0P6Ec5CM9qVqV1U2JH','7mV9ia2PsTJ1yYmGNv9tEE','6KNlbrsKfea9WAwOi2yq84','7GQumyB48MXYwHpqVJj8f3',
+'3UteV5HVR6c6vMfFTvYtuG','2RaA6kIcvomt77qlIgGhCT','2JS1iE5A5RHvUPH5Zl9jlF','21yymkg894UdI2PQ5D6ScH','0mD19MC6H0OzHvEUADHypU','1W1Fchq0voTFhKGWmn57uW','4Jq5ea6oLv2WxP8QzvY2RT',
+'7mL0DJOgIJ9Z4b0NHVtTZe','25kORdST1xzG4WXOnzJCKV','6qxi41lmbH35MT29bqlL4k','6gECrWsQGGA49w5uIAoVqd','4oDZ5L8izBals6jKBJDBcX','3pa83YDPO7IdtY9ABiMLaP','4PSiPZp8MYMDZzuBhCLgc6',
+'0LN0ASTtcGIbNTnjSHG6eO'];
+
+var temp2 = ['3G3lahQSMk4BHnap1i853u','2zH0Z7CEPVnpDbI1sqC8dw','3aJymuSkVjznisc20MND55','4ReyTz0y3TGkX48wO3Llot','0hhzJEusz6r7f0eL1Uc8kw','6NdcSEhpGGAYXNnnhGS2s6',
+'59pBA1HUMol92PIIeJ0h9F','2EoIt9vdgFRNW03u5IvFsQ','1N9GGOUf8TQqsaPDByZzEF','1CxG3QsfkmcUYlxWwvOtz5','3c6afiysmB7OnxQzzSqRfD','5Z53DsDtQ3H474nRstsksf','2DlHlPMa4M17kufBvI2lEN',
+'3mcG2NI5G5vhrQtRda1YnA','1mnqraQ8oV8MX92rdOFLWW','6NvRxjfYkkT2SpirAlmsjH','6CDhfV6K4yplWYFR8Ip82v','3uJhF1XGOJ27hweKEeBOtk','7coH7f2P7SiLxmo95b5QHX','2C0RI3XZYEyne1ZQ4YBl5y',
+'61mWefnWQOLf90gepjOCb3','2fnbCZHLXyrSdWhaRlBwQP','2zSapg6tQtoABTstNHcYde','42GP0xKtkolBnmqQRvSllO','3KrwkQhiQc5ppjEXv1nDRZ','0yHlyAKqAF1KLKx8BMYhvq','3OW3uDpM7mgLe3xU6EYX5q',
+'6dd5Z6ndIrQYDNcap0yTFD','5Nzph7bpgv2GNh2DcVX29T','2It4QZOCHQYlHWxW60RYwL','7uokoNu7ipUXzxurlX0ZbA','1GXWFahhaBCWOVeqXuKK4F','3cHyrEgdyYRjgJKSOiOtcS','3qwVqJyXKNiPZLz9VBMd6r',
+'4OpmC94xXTITiYKfNJtHrb','19CAKZdXVNyZrfmF60RAj3'];
+
+// temp3 = ['2jKP7xYfjx85yuVnC1LFQT'];
+// spotifyApi.getTracks(temp3, function(err, data) {
+//   if (err)
+//     console.error(err);
+//     else {
+//       for (i = 1; i < 150; i++) {
+//         var albumID = data['tracks'][i]['album']['id'];
+//         spotifyApi.getAlbum(albumID, function(err, data) {
+//           if (err)
+//             console.error(err, albumID);
+//           else
+//             document.body.innerHTML += data['name'];
+//             document.body.innerHTML += data['release_date'];
+//             document.body.innerHTML += '<br>';
+//           });
+//   }
+// }
+// });
+
+spotifyApi.getAlbum('4pFKV18Ioeiln9RORAXx99', function(err, data) {
+  if (err)
+  console.error(err);
+  else {
+    console.log(data);
+  }
+});
+
+
+
+
+//i = 100 for real one
+//parse Json (trackID, trackName, artistID, albumID, genreArray, releaseDate, popularity, tempo, albumArtURL)
+function parseJson(data) {
+  for (i = 0; i < 100; i++) {
+
+    var track = new Track();
+    tracks.push(track);
+
+    var trackID = data['items'][i]['track']['id'];
+    var trackName = data['items'][i]['track']['name'];
+    var albumID = data['items'][i]['track']['album']['id'];
+    var albumName =  data['items'][i]['track']['album']['name'];
+    var artistID = data['items'][i]['track']['artists'][0]['id'];
+    var artistName = data['items'][i]['track']['artists'][0]['name'];
+    var albumArtURL = data['items'][i]['track']['album']['images'][0]['url'];
+    var popularity = data['items'][i]['track']['popularity'];
+
+    track.trackID = trackID;
+    track.trackName = trackName;
+    track.albumName = albumName;
+    track.artistName = artistName;
+    track.albumArtURL = albumArtURL;
+    track.popularity = popularity;
+
+    getDate(albumID, track);
+    getGenres(artistID, track);
+    getTempo(trackID, track);
+  }
+};
+
+function Track () {
+  this.trackID = "";
+  this.trackName = "";
+  this.albumName = "";
+  this.artistName = "";
+  this.albumArtURL = "";
+  this.popularity = 0;
+  this.releaseDate = "";
+  this.genres = "";
+  this.tempo = "";
+}
+
+
+//releaseDate
+function getDate (albumID, track) {
+  spotifyApi.getAlbum(albumID, function(err, data) {
+    if (err)
+      console.error(err);
+    else
+      var releaseDate = data['release_date'];
+      test = releaseDate;
+      track.releaseDate = releaseDate;
   });
-
-//get album
-spotifyApi.getAlbum('2QJmrSgbdM35R67eoGQo4j', function(err, data) {
-  if (err) console.error(err);
-  else console.log('Album: ', data);
-});
+};
 
 
-//get track
-spotifyApi.getTrack('3Qm86XLflmIXVm1wcwkgDK', function(err, data) {
-  if (err) console.error(err);
-  else console.log('Track:', data);
-  //print album of track
-  // console.log("This track is from this album: ", data["album"]["id"])
-});
+//genres
+function getGenres (artistID, track) {
+  spotifyApi.getArtist(artistID, function(err, data) {
+    if (err)
+      console.error(err);
+    else
+      var genres = data['genres'];
+      genres = String(genres);
+      track.genres = genres;
+  });
+};
 
-spotifyApi.getArtist('06HL4z0CvFAxyc27GXpf02', function(err, data) {
-  if (err) console.error(err);
-  else console.log('Artist: ', data);
-})
+//tempo
+function getTempo(trackID, track) {
+  spotifyApi.getAudioFeaturesForTrack(trackID, function(err, data) {
+    if (err) {
+      console.error(err);
+    }
+    else
+      var tempo = data['tempo'];
+      track.tempo = tempo;
+      // finalString += JSON.stringify(track);
+      document.body.innerHTML += JSON.stringify(track);
+  });
+};
 
 },{"spotify-web-api-js":2}],2:[function(require,module,exports){
 /* global module */
