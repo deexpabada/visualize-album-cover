@@ -1,5 +1,9 @@
 # Visualizing Music: Relationships Between Albums and Color
 
+## Running the Program
+To simply run the program, you can open the index.html file in any browser (Chrome recommended). The JS files and other libraries should load automatically, without having to download them. 
+To replicate the program, you will have to download the following libraries that are used in this program: bundle.js, node, d3, bootstrap, browserify, urllib. 
+
 ## Introduction
  Album covers provide substantial contextual information about the music itself. Similar to books and their covers, music has album covers that may convey details about the music’s style, genre, mood, and time period. As noted by artists who create album covers, album art represent emotion, genre similarity, and other sociological implications that can help classify subjective aspects of music. In our study, we consider relationships between music and its associated cover art using both categorical and quantitative variables such as genre, release date, popularity, tempo, and release season.
 
