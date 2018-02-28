@@ -2,15 +2,17 @@ body {
   font-family: 'Helvetica';
 }
 
-.empty {
-  width: 100%;
-  height: 20%;
+#chart {
+  margin-top: 30px;
 }
 
 .vis {
-  margin-top: 120px;
+  margin-top: 40px;
 }
 
+.zoomIn {
+  margin-left: -50px;
+}
 img {
   height: 150px;
   width: 150px;
